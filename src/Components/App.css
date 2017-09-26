@@ -79,6 +79,9 @@ ul, li {
     color: #fff;
     margin-left: 35px; }
 
+.panel .remove {
+  cursor: pointer; }
+
 .panel .panel-body, .panel ul {
   display: flex;
   align-items: center;
