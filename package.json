@@ -1,11 +1,15 @@
 {
-  "name": "my-app",
+  "name": "gpagos",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "classnames": "^2.2.5",
     "node-sass-chokidar": "^0.0.3",
     "react": "^15.6.1",
+    "react-bootstrap": "^0.31.3",
     "react-dom": "^15.6.1",
+    "react-responsive-modal": "^1.7.1",
     "react-scripts": "1.0.13"
   },
   "scripts": {

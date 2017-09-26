@@ -1,21 +1,52 @@
-import React, { Component } from 'react';
-import logo from '../Images/logo.svg';
-import Prueba from './Prueba';
+import React, { Component } from 'react'
+import Logo from './Navbar/Childs/Logo'
+import Request from './Request/Request'
+import CreateRequest from './Navbar/CreateRequest'
+import { Grid, Row, Navbar } from 'react-bootstrap'
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      items: [],
+      id: 0
+    }
+    this.onSend = this.onSend.bind(this);
+  }
+
+  onSend = (newRequest) => {
+    this.setState((prevState) => ({
+      items: prevState.items.concat(newRequest)
+    }));
+  }
+
+  handleDelete(id){
+    this.setState(prevState => ({
+        data: prevState.data.filter(el => el !== id )
+    }));
+  }
+
+  delete(id){
+    this.setState(this.item.id)
+  }
+
   render() {
     return (
       <div className="App">
-        <Prueba/>
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar>
+          <Navbar.Header>
+            <Logo />
+            <h2 className="boder-left">Solicitudes</h2>
+          </Navbar.Header>
+          <CreateRequest onSubmit={this.onSend} />
+        </Navbar>
+        <Grid>
+          <Row>
+            <Request handleDelete={this.delete.bind(this)} items={this.state.items} />
+          </Row>
+        </Grid>
       </div>
-    );
+    )
   }
 }
 
