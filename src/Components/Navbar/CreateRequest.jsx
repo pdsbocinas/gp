@@ -8,8 +8,6 @@ class CreateRequest extends Component {
       open: false,
       id: 0
     }
-    this.handleInputChange = this.handleInputChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleInputChange = (e) => {
@@ -68,7 +66,7 @@ class CreateRequest extends Component {
             </div>
             <div className="col-xs-12 col-lg-12">
               <div className="block-input">
-                <button className="btn btn-cancel" onClick={this.onCloseModal}>Cancelar</button>
+                <a className="btn btn-cancel" onClick={this.onCloseModal}>Cancelar</a>
                 <button className="btn btn-primary" type="submit">Crear</button>
               </div>
             </div>
