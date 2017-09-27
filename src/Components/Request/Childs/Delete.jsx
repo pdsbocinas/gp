@@ -3,10 +3,6 @@ import remove from '../../../images/icon-delete.png'
 
 class Delete extends Component {
 
-  constructor () {
-    super()
-  }
-
   handleDeleteItem = (e) => {
     this.props.perform();
   }
