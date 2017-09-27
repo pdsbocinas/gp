@@ -1,0 +1,28 @@
+.block-confirm {
+  display: flex;
+  align-items: center;
+
+  .border-confirm {
+    border: 1px solid #D20F36;
+    border-radius: 2px;
+    display: flex;
+    padding: 18px 15px;
+    margin-left: 12px;
+
+    a {
+      font-size: 16px;
+
+      &.btn-reject {
+        color: #333;
+        font-weight: 200;
+        margin-left: 130px;
+      }
+
+      &.btn-confirm {
+        color: #D20F36;
+        font-weight: bold;
+        margin-left: 15px;
+      }
+    }
+  }
+}

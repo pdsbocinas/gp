@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
@@ -5,6 +6,10 @@ body {
 
 ul, li {
   list-style: none; }
+
+.flex-container {
+  display: flex;
+  align-items: center; }
 
 .navbar .navbar-header {
   display: flex;
@@ -80,39 +85,42 @@ ul, li {
     margin-left: 35px; }
 
 .panel .remove {
-  cursor: pointer; }
+  cursor: pointer;
+  margin-right: 5px; }
+  .panel .remove + div {
+    width: 240px; }
 
-.panel .panel-body, .panel ul {
+.panel .panel-body {
   display: flex;
   align-items: center;
   padding: 10px 15px; }
 
-.panel ul {
-  padding: 0;
-  margin: 0; }
-  .panel ul li {
-    font-size: 16px; }
-    .panel ul li p {
-      color: #848484;
-      font-size: 12px;
+.panel .flex-container {
+  font-size: 16px;
+  margin-right: 20px; }
+  .panel .flex-container + div {
+    margin-right: 45px; }
+  .panel .flex-container p {
+    color: #848484;
+    font-size: 12px;
+    font-weight: 200;
+    margin-bottom: 0; }
+  .panel .flex-container .cuit {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333; }
+    .panel .flex-container .cuit span {
+      color: #8e8e8e;
+      font-size: 16px;
       font-weight: 200;
-      margin-bottom: 0; }
-    .panel ul li .cuit {
-      font-size: 16px;
-      font-weight: 400;
-      color: #333; }
-      .panel ul li .cuit span {
-        color: #8e8e8e;
-        font-size: 16px;
-        font-weight: 200;
-        letter-spacing: 1px; }
-    .panel ul li strong {
-      display: block; }
-    .panel ul li h3 {
-      color: #333;
-      font-size: 16px;
-      font-weight: bold;
-      margin: 5px 0; }
+      letter-spacing: 1px; }
+  .panel .flex-container strong {
+    display: block; }
+  .panel .flex-container h3 {
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 5px 0; }
 
 .panel .date {
   background: #B6B6B6;
@@ -131,3 +139,41 @@ ul, li {
     margin-right: 15px;
     font-size: 18px;
     width: 170px; }
+
+.enabled  {
+  background-image: url("images/icon-ok.png");
+  width: 33px;
+  height: 33px;
+  display: block; }
+
+.disabled {
+  background-image: url("images/icon-disabled.png");
+  width: 33px;
+  height: 33px;
+  display: block; }
+
+.reject {
+  background-image: url("images/icon-reject.png");
+  width: 33px;
+  height: 33px;
+  display: block; }
+
+.block-confirm {
+  display: flex;
+  align-items: center; }
+  .block-confirm .border-confirm {
+    border: 1px solid #D20F36;
+    border-radius: 2px;
+    display: flex;
+    padding: 18px 15px;
+    margin-left: 12px; }
+    .block-confirm .border-confirm a {
+      font-size: 16px; }
+      .block-confirm .border-confirm a.btn-reject {
+        color: #333;
+        font-weight: 200;
+        margin-left: 130px; }
+      .block-confirm .border-confirm a.btn-confirm {
+        color: #D20F36;
+        font-weight: bold;
+        margin-left: 15px; }

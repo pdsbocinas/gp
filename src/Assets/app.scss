@@ -1,1 +1,7 @@
-@import 'Components/App';
+@import 'Base/base';
+
+@import 'Components/navbar';
+@import 'Components/modal';
+@import 'Components/panel';
+@import 'Components/icon';
+@import 'Components/notify';

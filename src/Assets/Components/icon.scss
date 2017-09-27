@@ -1,0 +1,20 @@
+.enabled {
+  background-image: url('images/icon-ok.png');
+  width: 33px;
+  height: 33px;
+  display: block;
+}
+
+.disabled {
+  background-image: url('images/icon-disabled.png');
+  width: 33px;
+  height: 33px;
+  display: block;
+}
+
+.reject {
+  background-image: url('images/icon-reject.png');
+  width: 33px;
+  height: 33px;
+  display: block;
+}

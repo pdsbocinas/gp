@@ -5,7 +5,6 @@ class CreateRequest extends Component {
   constructor() {
     super()
     this.state = {
-      request: [],
       open: false,
       id: 0
     }
@@ -31,10 +30,7 @@ class CreateRequest extends Component {
       cuit: this.state.cuit,
       establecimiento: this.state.establecimiento
     };
-    this.setState((prevState) => ({
-      request: prevState.request.concat(newRequest)
-    }))
-    this.props.onSubmit(newRequest)
+    this.props.onCreate(newRequest)
     this.setState({ open: false })
   }
 
@@ -58,21 +54,21 @@ class CreateRequest extends Component {
           <form onSubmit={this.handleSubmit}>
             <div className="form-group">
               <div className="col-xs-12 col-lg-12">
-                <label for="razon">Razon Social</label>
+                <label>Razon Social</label>
                 <input type="text" className="form-control" name="razon" value={this.state.razon} onChange={this.handleInputChange} placeholder="Razon Social" />
               </div>
               <div className="col-xs-12 col-lg-6">
-                <label for="razon">Número de CUIT</label>
+                <label>Número de CUIT</label>
                 <input type="text" className="form-control" name="cuit" value={this.state.cuit} onChange={this.handleInputChange} placeholder="00-000000-0" />
               </div>
               <div className="col-xs-12 col-lg-6">
-                <label for="razon">Número de establecimiento</label>
+                <label>Número de establecimiento</label>
                 <input type="text" className="form-control" name="establecimiento" value={this.state.establecimiento} onChange={this.handleInputChange} placeholder="0000000-0" />
               </div>
             </div>
             <div className="col-xs-12 col-lg-12">
               <div className="block-input">
-                <button className="btn btn-cancel" onClose={this.onCloseModal}>Cancelar</button>
+                <button className="btn btn-cancel" onClick={this.onCloseModal}>Cancelar</button>
                 <button className="btn btn-primary" type="submit">Crear</button>
               </div>
             </div>

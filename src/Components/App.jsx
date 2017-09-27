@@ -11,23 +11,18 @@ class App extends Component {
       items: [],
       id: 0
     }
-    this.onSend = this.onSend.bind(this);
   }
 
-  onSend = (newRequest) => {
-    this.setState((prevState) => ({
-      items: prevState.items.concat(newRequest)
-    }));
+  onCreate = (newRequest) => {
+    this.setState({
+      items: this.state.items.concat(newRequest)
+    });
   }
 
-  handleDelete(id){
-    this.setState(prevState => ({
-        data: prevState.data.filter(el => el !== id )
-    }));
-  }
-
-  delete(id){
-    this.setState(this.item.id)
+  handleDelete = (item) => {
+    this.setState({
+      items: this.state.items.filter(el => el.id !== item.id )
+    });
   }
 
   render() {
@@ -38,11 +33,14 @@ class App extends Component {
             <Logo />
             <h2 className="boder-left">Solicitudes</h2>
           </Navbar.Header>
-          <CreateRequest onSubmit={this.onSend} />
+          <CreateRequest onCreate={this.onCreate} />
         </Navbar>
         <Grid>
           <Row>
-            <Request handleDelete={this.delete.bind(this)} items={this.state.items} />
+            <Request
+              items={this.state.items}
+              onDelete={this.handleDelete}
+            />
           </Row>
         </Grid>
       </div>
