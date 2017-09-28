@@ -6,7 +6,7 @@ class Request extends Component {
   constructor () {
     super()
     this.state = {
-      name: 0
+      
     }
   }
 
